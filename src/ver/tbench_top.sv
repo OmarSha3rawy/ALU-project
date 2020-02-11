@@ -24,8 +24,8 @@ module tbench_top;
    
   //reset Generation
   initial begin
-    rst_n = 1;
-    #CLK_HALF_PERIOD rst_n =0;
+    rst_n = 0;
+    #CLK_HALF_PERIOD rst_n = 1;
   end
    
    
@@ -34,7 +34,7 @@ module tbench_top;
    
   //Testcase instance, interface handle is passed to test as an argument
   test t1(i_intf);
-   
+  
   //DUT instance, interface signals are connected to the DUT ports
   ALU DUT (
     .clk(i_intf.clk),
