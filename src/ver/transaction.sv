@@ -23,8 +23,39 @@ class transaction;
   randc bit b_en;
 
   //constaints to apply speicidic scenarios
-  constraint operations_c { a_en != b_en; };
-  constraint enable_c { ALU_en == 1; };
+  constraint operations_c { a_en != b_en; }; // to be removed to test case of a_en = b_en = 1
+  constraint enable_c { ALU_en == 1; }; // to be removed in the negative testing
+  
+  covergroup cg;
+    c1: coverpoint A { bins boundary[] = {-15,15};
+                        bins pos_partition = {[0:15]};
+                        bins neg_partition = {[-15:-1]};
+                        bins b7 = default;}
+						
+    c2: coverpoint B { bins boundary[] = {-15,15};
+                        bins pos_partition = {[0:15]};
+                        bins neg_partition = {[-15:-1]};
+                        bins b7 = default;}
+
+    c3: coverpoint a_op { illegal_bins forbidden = {7}; // to be changed in negative testing
+                        bins b2[] = {[0:$]};
+                        bins b7 = default;}
+						
+    c4: coverpoint b_op { illegal_bins forbidden = {3}; // to be changed in SET2 and negative testing
+                        bins b2[] = {[0:$]};
+                        bins b7 = default;}
+
+    c5: coverpoint a_en { bins rising = (1=>0);   
+                        bins falling = (0=>1);
+                        bins b7 = default;}		
+
+    c6: coverpoint b_en { bins rising = (1=>0);   
+                        bins falling = (0=>1);
+                        bins b7 = default;}	
+	c7: cross A, B, a_op;
+	c8: cross A, B, b_op;
+						
+  endgroup : cg
 
   function void display(string name);
     $display("-------------------------");
