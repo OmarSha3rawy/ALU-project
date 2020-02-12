@@ -1,7 +1,7 @@
 /* 
-// Module: ALU.v 
+// Module: transaction.sv 
 // Project: simple ALU project
-// Description: Simple behavioural model for Arithmatic logic unit (ALU)
+// Description: class represent sample of inputs
 // Owner : Omar Adel Abbas Sayed
 // Version : 1.0 
 // Date : 1 February 2020
@@ -64,3 +64,4 @@ class transaction;
     $display("-------------------------");
   endfunction
 endclass
+

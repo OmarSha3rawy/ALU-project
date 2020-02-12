@@ -1,14 +1,14 @@
 /* 
-// Module: ALU.v 
+// Module: scoreboard.sv 
 // Project: simple ALU project
-// Description: Simple behavioural model for Arithmatic logic unit (ALU)
+// Description: verify the result of the DUT and assert any errors
 // Owner : Omar Adel Abbas Sayed
 // Version : 1.0 
-// Date : 1 February 2020
+// Date : 9 February 2020
 // History : 
 // // --------------------------- 
 */
-`include "transaction.sv"
+//`include "transaction.sv"
 class scoreboard;
     
   //creating mailbox handle

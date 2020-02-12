@@ -1,7 +1,7 @@
 /* 
-// Module: ALU.v 
+// Module: interface.sv 
 // Project: simple ALU project
-// Description: Simple behavioural model for Arithmatic logic unit (ALU)
+// Description: interface between the DUT and the testbench
 // Owner : Omar Adel Abbas Sayed
 // Version : 1.0 
 // Date : 1 February 2020

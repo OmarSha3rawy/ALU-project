@@ -1,10 +1,10 @@
 /* 
-// Module: ALU.v 
+// Module: tbench_top.sv 
 // Project: simple ALU project
-// Description: Simple behavioural model for Arithmatic logic unit (ALU)
+// Description: create the test and the DUT instance 
 // Owner : Omar Adel Abbas Sayed
 // Version : 1.0 
-// Date : 1 February 2020
+// Date : 9 February 2020
 // History : 
 // // --------------------------- 
 */

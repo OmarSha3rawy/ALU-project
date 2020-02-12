@@ -1,10 +1,10 @@
 /* 
-// Module: ALU.v 
+// Module: driver.sv 
 // Project: simple ALU project
-// Description: Simple behavioural model for Arithmatic logic unit (ALU)
+// Description: drive the transaction to the DUT via interface
 // Owner : Omar Adel Abbas Sayed
 // Version : 1.0 
-// Date : 1 February 2020
+// Date : 9 February 2020
 // History : 
 // // --------------------------- 
 */

@@ -1,10 +1,10 @@
 /* 
-// Module: ALU.v 
+// Module: generator.sv 
 // Project: simple ALU project
-// Description: Simple behavioural model for Arithmatic logic unit (ALU)
+// Description: generate random transactions
 // Owner : Omar Adel Abbas Sayed
 // Version : 1.0 
-// Date : 1 February 2020
+// Date : 9 February 2020
 // History : 
 // // --------------------------- 
 */
@@ -38,6 +38,6 @@ class generator;
       if( !trans.randomize() ) $fatal("Gen:: trans randomization failed");   
       gen2driv.put(trans);
     end
-    -> ended; //triggering indicatesthe end of generation
+    -> ended; //triggering indicates the end of generation
   endtask 
 endclass
