@@ -3,7 +3,7 @@
 // Project: simple ALU project
 // Description: create the test and the DUT instance 
 // Owner : Omar Adel Abbas Sayed
-// Version : 1.0 
+// Version : 2.0 
 // Date : 9 February 2020
 // History : 
 // // --------------------------- 
@@ -25,6 +25,7 @@ module tbench_top;
   //reset Generation
   initial begin
     rst_n = 0;
+	clk = 0;
     #CLK_HALF_PERIOD rst_n = 1;
   end
    
@@ -47,9 +48,5 @@ module tbench_top;
     .C(i_intf.c)
    );
    
-  //enabling the wave dump
-  initial begin
-    $dumpfile("dump.vcd"); $dumpvars;
-  end
 endmodule
 

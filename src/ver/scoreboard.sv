@@ -3,7 +3,7 @@
 // Project: simple ALU project
 // Description: verify the result of the DUT and assert any errors
 // Owner : Omar Adel Abbas Sayed
-// Version : 1.0 
+// Version : 2.0 
 // Date : 9 February 2020
 // History : 
 // // --------------------------- 

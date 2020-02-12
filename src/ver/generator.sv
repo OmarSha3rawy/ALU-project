@@ -3,7 +3,7 @@
 // Project: simple ALU project
 // Description: generate random transactions
 // Owner : Omar Adel Abbas Sayed
-// Version : 1.0 
+// Version : 2.0 
 // Date : 9 February 2020
 // History : 
 // // --------------------------- 
@@ -18,8 +18,9 @@ class generator;
   event ended; //event, to indicate the end of transaction generation
  
   //constructor
-  function new(mailbox gen2driv);
+  function new(mailbox gen2driv, event ended);
     this.gen2driv = gen2driv; //getting the mailbox handle from env
+	this.ended = ended;
   endfunction
    
   task main();

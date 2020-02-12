@@ -3,7 +3,7 @@
 // Project: simple ALU project
 // Description: class represent sample of inputs
 // Owner : Omar Adel Abbas Sayed
-// Version : 1.0 
+// Version : 2.0 
 // Date : 1 February 2020
 // History : 
 // // --------------------------- 
@@ -12,6 +12,7 @@
 class transaction;
   parameter INPUT_WIDTH = 5;
   parameter OUTPUT_WIDTH = 6;
+  bit clk;
   //declaring the transaction items
   rand bit [INPUT_WIDTH-1:0] A;
   rand bit [INPUT_WIDTH-1:0] B;

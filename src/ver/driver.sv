@@ -3,7 +3,7 @@
 // Project: simple ALU project
 // Description: drive the transaction to the DUT via interface
 // Owner : Omar Adel Abbas Sayed
-// Version : 1.0 
+// Version : 2.0 
 // Date : 9 February 2020
 // History : 
 // // --------------------------- 
@@ -14,13 +14,15 @@ class driver;
   int no_transactions; //used to count the number of transactions
   virtual intf vif; //creating virtual interface handle
   mailbox gen2driv; //creating mailbox handle
-   
+  event ended;
+  
   //constructor
-  function new(virtual intf vif,mailbox gen2driv);
+  function new(virtual intf vif,mailbox gen2driv, event ended);
     //getting the interface
     this.vif = vif;
     //getting the mailbox handles from  environment
     this.gen2driv = gen2driv;
+	this.ended = ended;
   endfunction
    
   //Reset task, Reset the Interface signals to default/initial values
@@ -42,6 +44,7 @@ class driver;
   task main;
     forever begin
       transaction trans;
+	  @(ended);
       gen2driv.get(trans);
       @(posedge vif.clk);
       vif.ALU_en <= 1; //to be removed later

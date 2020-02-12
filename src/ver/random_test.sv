@@ -3,7 +3,7 @@
 // Project: simple ALU project
 // Description: create enviroment instance
 // Owner : Omar Adel Abbas Sayed
-// Version : 1.0 
+// Version : 2.0 
 // Date : 1 February 2020
 // History : 
 // // --------------------------- 

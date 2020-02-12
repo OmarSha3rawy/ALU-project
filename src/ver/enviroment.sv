@@ -3,7 +3,7 @@
 // Project: simple ALU project
 // Description: class that contains a generator and driver
 // Owner : Omar Adel Abbas Sayed
-// Version : 1.0 
+// Version : 2.0 
 // Date : 9 February 2020
 // History : 
 // // --------------------------- 
@@ -14,6 +14,7 @@
 `include "driver.sv"
 `include "monitor.sv"
 `include "scoreboard.sv"
+`include "coverage_group.sv"
 
 class environment;
    
@@ -22,10 +23,14 @@ class environment;
   driver driv;
   monitor mon;
   scoreboard scb;
-   
+  cov cgp;
+  
   //mailbox handle's
   mailbox gen2driv;
   mailbox mon2scb;  
+  mailbox mon2cov; 
+  
+  event ended;
   
   //virtual interface
   virtual intf vif;
@@ -40,11 +45,11 @@ class environment;
     mon2scb = new();
 	
     //creating generator and driver
-    gen  = new(gen2driv);
-    driv = new(vif,gen2driv);
-    mon  = new(vif,mon2scb);
+    gen  = new(gen2driv, ended);
+    driv = new(vif,gen2driv, ended);
+    mon  = new(vif,mon2scb, mon2cov);
     scb  = new(mon2scb);
-	
+    cgp  = new(vif, mon2cov);	
   endfunction
    
   //
@@ -58,6 +63,7 @@ class environment;
     driv.main();
 	mon.main();
     scb.main();
+	//cov.main
     join_any
   endtask
    
