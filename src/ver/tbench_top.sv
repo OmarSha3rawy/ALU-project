@@ -29,11 +29,9 @@ module tbench_top;
   end
    
    
-  //creatinng instance of interface, inorder to connect DUT and testcase
-  intf i_intf(clk,rst_n);
-   
-  //Testcase instance, interface handle is passed to test as an argument
-  test t1(i_intf);
+  
+  intf i_intf(clk,rst_n); //creatinng instance of interface, inorder to connect DUT and testcase
+  test t1(i_intf); //Testcase instance, interface handle is passed to test as an argument
   
   //DUT instance, interface signals are connected to the DUT ports
   ALU DUT (

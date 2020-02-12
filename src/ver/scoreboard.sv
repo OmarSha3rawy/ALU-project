@@ -11,11 +11,8 @@
 //`include "transaction.sv"
 class scoreboard;
     
-  //creating mailbox handle
-  mailbox mon2scb;
-   
-  //used to count the number of transactions
-  int no_transactions;
+  mailbox mon2scb; //creating mailbox handle
+  int no_transactions; //used to count the number of transactions
    
   //constructor
   function new(mailbox mon2scb);

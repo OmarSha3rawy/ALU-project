@@ -11,9 +11,9 @@
 
 `include "enviroment.sv"
 program test(intf intf);
-  parameter NUM_OF_SAMPLES = 10;
-  //declaring environment instance
-  environment env;
+  parameter NUM_OF_SAMPLES = 100;
+  
+  environment env; //declaring environment instance
    
   initial begin
     //creating environment

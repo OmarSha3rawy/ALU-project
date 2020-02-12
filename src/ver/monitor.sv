@@ -12,22 +12,17 @@
 
 class monitor;
 
-  //creating virtual interface handle
-  virtual intf vif;
-
-  //creating mailbox handle
-  mailbox mon2scb;
+  virtual intf vif; //creating virtual interface handle
+  mailbox mon2scb; //creating mailbox handle
 
   //constructor
   function new(virtual intf vif,mailbox mon2scb);
-    //getting the interface
-    this.vif = vif;
-    //getting the mailbox handles from? environment
-    this.mon2scb = mon2scb;
+    this.vif = vif; //getting the interface
+    this.mon2scb = mon2scb; //getting the mailbox handles from? environment
   endfunction
 
-//Samples the interface signal and send the sample packet to scoreboard
-task main;
+
+task main; //Samples the interface signal and send the sample packet to scoreboard
   forever begin
     transaction trans;
     trans = new();

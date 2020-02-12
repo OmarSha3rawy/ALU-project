@@ -12,27 +12,17 @@
 
 class generator;
    
-  //declaring transaction class
-  rand transaction trans;
-   
-  //declaring mailbox
-  mailbox gen2driv;
-   
-  //repeat count, to specify number of items to generate
-  int  repeat_count; 
- 
-  //event, to indicate the end of transaction generation
-  event ended;
+  rand transaction trans; //declaring transaction class
+  mailbox gen2driv; //declaring mailbox
+  int  repeat_count; //repeat count, to specify number of items to generate
+  event ended; //event, to indicate the end of transaction generation
  
   //constructor
   function new(mailbox gen2driv);
-    //getting the mailbox handle from env
-    this.gen2driv = gen2driv;
+    this.gen2driv = gen2driv; //getting the mailbox handle from env
   endfunction
    
-  //main task, generates(create and randomizes) the repeat_count number of transaction packets and puts into mailbox
   task main();
- 
     repeat(repeat_count) begin
       trans = new();
       if( !trans.randomize() ) $fatal("Gen:: trans randomization failed");   

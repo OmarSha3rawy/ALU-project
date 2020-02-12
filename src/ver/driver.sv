@@ -11,14 +11,9 @@
 //`include "transaction.sv"
 class driver;
  
-  //used to count the number of transactions
-  int no_transactions;
-   
-  //creating virtual interface handle
-  virtual intf vif;
-   
-  //creating mailbox handle
-  mailbox gen2driv;
+  int no_transactions; //used to count the number of transactions
+  virtual intf vif; //creating virtual interface handle
+  mailbox gen2driv; //creating mailbox handle
    
   //constructor
   function new(virtual intf vif,mailbox gen2driv);
